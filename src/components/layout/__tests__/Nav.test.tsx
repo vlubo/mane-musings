@@ -2,9 +2,11 @@ import { render, screen } from '@testing-library/react'
 import { Nav } from '../Nav'
 
 describe('Nav', () => {
-  it('renders the wordmark', () => {
+  it('renders the wordmark as a link to /', () => {
     render(<Nav />)
-    expect(screen.getByText('Mane Musings')).toBeInTheDocument()
+    const wordmark = screen.getByRole('link', { name: /mane musings/i })
+    expect(wordmark).toBeInTheDocument()
+    expect(wordmark).toHaveAttribute('href', '/')
   })
 
   it('renders main nav links', () => {

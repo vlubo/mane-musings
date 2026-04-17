@@ -9,6 +9,7 @@ export function Footer() {
       <Link href="/" className="font-display text-base text-ink tracking-wide">
         Mane Musings
       </Link>
+      {/* TODO: replace with real social media links */}
       <div className="flex gap-4 text-[11px] text-gray tracking-wide uppercase">
         <span>Instagram</span>
         <span>·</span>
