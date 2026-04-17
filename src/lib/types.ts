@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from '@portabletext/types'
+
 export interface SanityImage {
   asset: { _ref: string; _type: 'reference' }
   hotspot?: { x: number; y: number }
@@ -41,7 +43,7 @@ export interface PostCard {
 }
 
 export interface PostFull extends PostCard {
-  body: any[]
+  body: PortableTextBlock[]
   pinnedToWhatIUse?: boolean
   hairTypes?: Pick<HairType, '_id' | 'title' | 'slug'>[]
   seo?: { title?: string; description?: string }
