@@ -30,7 +30,21 @@ describe('ArticleCard', () => {
 
   it('links to /articles/[slug]', () => {
     render(<ArticleCard post={mockPost} />)
-    const link = screen.getByRole('link')
+    const link = screen.getByRole('link', { name: /how to deep condition curly hair/i })
     expect(link).toHaveAttribute('href', '/articles/how-to-deep-condition')
+  })
+
+  it('renders no image when coverImage is absent', () => {
+    render(<ArticleCard post={mockPost} />)
+    expect(screen.queryByRole('img')).not.toBeInTheDocument()
+  })
+
+  it('renders an image when coverImage is provided', () => {
+    const postWithImage = {
+      ...mockPost,
+      coverImage: { asset: { _ref: 'image-abc123-400x300-jpg', _type: 'reference' as const } },
+    }
+    render(<ArticleCard post={postWithImage} />)
+    expect(screen.getByRole('img')).toBeInTheDocument()
   })
 })
