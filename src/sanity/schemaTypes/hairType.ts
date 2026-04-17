@@ -12,7 +12,7 @@ export const hairType = defineType({
       name: 'enabled',
       title: 'Page Enabled',
       type: 'boolean',
-      description: 'When true, the /curl-types/[slug] page is live and linked in nav.',
+      description: 'When true, the /curl-types/[slug] page is publicly accessible.',
       initialValue: false,
     }),
   ],

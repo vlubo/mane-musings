@@ -8,7 +8,15 @@ export const category = defineType({
     defineField({ name: 'title', title: 'Title', type: 'string', validation: (r) => r.required() }),
     defineField({ name: 'slug', title: 'Slug', type: 'slug', options: { source: 'title' }, validation: (r) => r.required() }),
     defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
-    defineField({ name: 'coverImage', title: 'Cover Image', type: 'image', options: { hotspot: true } }),
+    defineField({
+      name: 'coverImage',
+      title: 'Cover Image',
+      type: 'image',
+      options: { hotspot: true },
+      fields: [
+        defineField({ name: 'alt', title: 'Alt Text', type: 'string' }),
+      ],
+    }),
   ],
-  preview: { select: { title: 'title' } },
+  preview: { select: { title: 'title', media: 'coverImage' } },
 })
