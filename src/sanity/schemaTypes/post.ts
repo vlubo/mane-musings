@@ -87,7 +87,7 @@ export const post = defineType({
           description: 'Two-column layout: heading on left, content on right.',
           fields: [
             defineField({ name: 'heading', title: 'Heading', type: 'string', validation: (r) => r.required() }),
-            defineField({ name: 'content', title: 'Content', type: 'array', of: [{ type: 'block' }], validation: (r) => r.min(1) }),
+            defineField({ name: 'content', title: 'Content', type: 'array', of: [{ type: 'block' }], validation: (r) => r.required().min(1) }),
           ],
           preview: { select: { title: 'heading' } },
         },
