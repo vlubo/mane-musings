@@ -14,7 +14,7 @@ const postCardFields = `
 
 export async function getAllPosts(): Promise<PostCard[]> {
   return client.fetch(
-    `*[_type == "post"] | order(publishedAt desc) { ${postCardFields} }`
+    `*[_type == "post" && !(_id in path("drafts.**"))] | order(publishedAt desc) { ${postCardFields} }`
   )
 }
 
@@ -39,7 +39,7 @@ export async function getPostBySlug(slug: string): Promise<PostFull | null> {
 
 export async function getPostsByCategory(categorySlug: string): Promise<PostCard[]> {
   return client.fetch(
-    `*[_type == "post" && category->slug.current == $categorySlug] | order(publishedAt desc) { ${postCardFields} }`,
+    `*[_type == "post" && !(_id in path("drafts.**")) && category->slug.current == $categorySlug] | order(publishedAt desc) { ${postCardFields} }`,
     { categorySlug }
   )
 }
@@ -53,7 +53,7 @@ export async function getPostsByHairType(hairTypeSlug: string): Promise<PostCard
 
 export async function getPinnedWhatIUsePosts(): Promise<PostCard[]> {
   return client.fetch(
-    `*[_type == "post" && pinnedToWhatIUse == true] | order(publishedAt desc) { ${postCardFields} }`
+    `*[_type == "post" && !(_id in path("drafts.**")) && pinnedToWhatIUse == true] | order(publishedAt desc) { ${postCardFields} }`
   )
 }
 

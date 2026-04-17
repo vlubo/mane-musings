@@ -7,6 +7,7 @@ interface Props {
 }
 
 export function TopicsStrip({ categories, activeSlug }: Props) {
+  if (!categories.length) return null
   return (
     <div className="flex items-center gap-3 flex-wrap px-8 py-5 border-b border-sage md:px-12">
       <span className="text-[10px] tracking-[0.25em] uppercase text-gray font-bold mr-2">

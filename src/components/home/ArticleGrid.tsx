@@ -6,6 +6,7 @@ interface Props {
 }
 
 function chunk<T>(arr: T[], sizes: number[]): T[][] {
+  if (!sizes.length) return []
   const result: T[][] = []
   let i = 0
   let sizeIndex = 0
