@@ -1,26 +1,25 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Colors — from Figma palette */
+  --color-canvas: #FEFEFB;
+  --color-ink: #393A3A;
+  --color-sage-light: #F0F5E5;
+  --color-sage: #DDE2BE;
+  --color-warm-white: #FCFCF5;
+  --color-cream: #F2F4E5;
+  --color-stone: #E6E8DA;
+  --color-gray: #696B6B;
+  --color-body: #505252;
+
+  /* Fonts */
+  --font-display: var(--font-display-var), sans-serif;
+  --font-body: var(--font-body-var), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-body);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
