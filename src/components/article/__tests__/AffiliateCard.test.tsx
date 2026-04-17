@@ -33,4 +33,13 @@ describe('AffiliateCard', () => {
     expect(link).toHaveAttribute('target', '_blank')
     expect(link).toHaveAttribute('rel', 'noopener noreferrer')
   })
+
+  it('renders an image when product.image is provided', () => {
+    const productWithImage = {
+      ...mockProduct,
+      image: { asset: { _ref: 'image-abc123-80x80-jpg', _type: 'reference' as const } },
+    }
+    render(<AffiliateCard product={productWithImage} />)
+    expect(screen.getByRole('img')).toBeInTheDocument()
+  })
 })

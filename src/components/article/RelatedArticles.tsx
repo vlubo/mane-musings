@@ -9,7 +9,7 @@ export function RelatedArticles({ posts }: Props) {
   if (posts.length === 0) return null
 
   return (
-    <section className="border-t border-sage">
+    <section className="border-t border-sage" aria-label="Related articles">
       <div className="px-8 pt-10 pb-6 md:px-12 md:pt-12 md:pb-7">
         <p className="text-[11px] tracking-[0.25em] uppercase text-gray font-semibold">More to Read</p>
       </div>

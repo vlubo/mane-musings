@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
 import type { AffiliateLink } from '@/lib/types'
 
@@ -10,7 +11,7 @@ export function AffiliateCard({ product }: Props) {
     <div className="flex gap-5 items-center bg-cream border border-sage p-5 my-9">
       <div className="w-20 h-20 bg-sage-light flex-shrink-0 overflow-hidden">
         {product.image && (
-          <img
+          <Image
             src={urlFor(product.image).width(80).height(80).url()}
             alt={product.image.alt ?? product.productName}
             width={80}

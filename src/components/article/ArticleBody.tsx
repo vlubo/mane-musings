@@ -1,11 +1,18 @@
 import { PortableText } from '@portabletext/react'
+import type { PortableTextComponents } from '@portabletext/react'
+import type { PortableTextBlock } from '@portabletext/types'
 import { AffiliateCard } from './AffiliateCard'
 import { SplitSection } from './SplitSection'
 import type { AffiliateLink } from '@/lib/types'
 
-const components = {
+interface SanityImageBlock {
+  _type: 'image'
+  caption?: string
+}
+
+const components: PortableTextComponents = {
   types: {
-    image: ({ value }: { value: any }) => (
+    image: ({ value }: { value: SanityImageBlock }) => (
       <figure className="my-9">
         <div className="w-full aspect-video bg-sage-light" />
         {value.caption && (
@@ -18,7 +25,7 @@ const components = {
     affiliateCardEmbed: ({ value }: { value: { product: AffiliateLink } }) => (
       <AffiliateCard product={value.product} />
     ),
-    splitSection: ({ value }: { value: { heading: string; content: any[] } }) => (
+    splitSection: ({ value }: { value: { heading: string; content: PortableTextBlock[] } }) => (
       <SplitSection heading={value.heading} content={value.content ?? []} />
     ),
   },
@@ -42,19 +49,23 @@ const components = {
     strong: ({ children }: { children?: React.ReactNode }) => (
       <strong className="font-semibold text-ink">{children}</strong>
     ),
-    link: ({ value, children }: { value?: { href: string }; children?: React.ReactNode }) => (
-      <a
-        href={value?.href}
-        className="underline underline-offset-2 text-body hover:text-ink transition-colors"
-      >
-        {children}
-      </a>
-    ),
+    link: ({ value, children }: { value?: { href: string }; children?: React.ReactNode }) => {
+      const isExternal = value?.href?.startsWith('http')
+      return (
+        <a
+          href={value?.href}
+          {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          className="underline underline-offset-2 text-body hover:text-ink transition-colors"
+        >
+          {children}
+        </a>
+      )
+    },
   },
 }
 
 interface Props {
-  body: any[]
+  body: PortableTextBlock[]
 }
 
 export function ArticleBody({ body }: Props) {

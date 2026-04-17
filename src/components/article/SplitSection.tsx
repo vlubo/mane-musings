@@ -1,8 +1,9 @@
 import { PortableText } from '@portabletext/react'
+import type { PortableTextBlock } from '@portabletext/types'
 
 interface Props {
   heading: string
-  content: any[]
+  content: PortableTextBlock[]
 }
 
 export function SplitSection({ heading, content }: Props) {
