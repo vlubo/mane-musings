@@ -7,7 +7,7 @@ export const affiliateLink = defineType({
   fields: [
     defineField({ name: 'productName', title: 'Product Name', type: 'string', validation: (r) => r.required() }),
     defineField({ name: 'brand', title: 'Brand', type: 'string', validation: (r) => r.required() }),
-    defineField({ name: 'url', title: 'Affiliate URL', type: 'url', validation: (r) => r.required() }),
+    defineField({ name: 'url', title: 'Affiliate URL', type: 'url', validation: (r) => r.required().uri({ scheme: ['https'] }) }),
     defineField({
       name: 'image',
       title: 'Product Image',

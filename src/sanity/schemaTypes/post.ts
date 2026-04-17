@@ -58,7 +58,13 @@ export const post = defineType({
       type: 'array',
       of: [
         { type: 'block' },
-        { type: 'image', options: { hotspot: true } },
+        {
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            defineField({ name: 'alt', title: 'Alt Text', type: 'string', description: 'Describe the image for screen readers.' }),
+          ],
+        },
         {
           type: 'object',
           name: 'affiliateCardEmbed',
@@ -81,7 +87,7 @@ export const post = defineType({
           description: 'Two-column layout: heading on left, content on right.',
           fields: [
             defineField({ name: 'heading', title: 'Heading', type: 'string', validation: (r) => r.required() }),
-            defineField({ name: 'content', title: 'Content', type: 'array', of: [{ type: 'block' }] }),
+            defineField({ name: 'content', title: 'Content', type: 'array', of: [{ type: 'block' }], validation: (r) => r.min(1) }),
           ],
           preview: { select: { title: 'heading' } },
         },
