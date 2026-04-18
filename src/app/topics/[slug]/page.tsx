@@ -40,7 +40,7 @@ export default async function TopicPage({ params }: Props) {
           {category.title}
         </h1>
         {category.description && (
-          <p className="text-[16px] leading-[135%] text-body max-w-[600px]">
+          <p className="text-[16px] leading-[135%] text-body">
             {category.description}
           </p>
         )}

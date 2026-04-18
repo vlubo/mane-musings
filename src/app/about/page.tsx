@@ -17,7 +17,8 @@ export default function AboutPage() {
       </section>
 
       {/* Section 1: A new approach */}
-      <section className="grid grid-cols-1 md:grid-cols-2 border-b border-ink bg-sage-light">
+      <section className="border-b border-ink bg-sage-light">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2">
         <div className="bg-sage-light min-h-[300px] md:min-h-[480px]" />
         <div className="px-8 py-10 md:px-12 md:py-16 flex flex-col gap-6">
           <h2 className="text-[20px] font-medium leading-[135%] text-ink">A new approach</h2>
@@ -38,10 +39,12 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Section 2: About the author */}
-      <section className="grid grid-cols-1 md:grid-cols-2 border-b border-ink bg-sage-light">
+      <section className="border-b border-ink bg-sage-light">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2">
         <div className="bg-sage-light min-h-[300px] md:min-h-[600px]" />
         <div className="px-8 py-10 md:px-12 md:py-16 flex flex-col gap-6">
           <h2 className="text-[20px] font-medium leading-[135%] text-ink">About the author</h2>
@@ -75,6 +78,7 @@ export default function AboutPage() {
             </p>
             <p>Wherever you are in your hair journey, I am so happy you are here.x</p>
           </div>
+        </div>
         </div>
       </section>
 

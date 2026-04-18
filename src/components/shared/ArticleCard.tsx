@@ -29,7 +29,7 @@ export function ArticleCard({ post }: Props) {
             )}
           </div>
           <div className="flex flex-col gap-4">
-            <p className="font-meta text-[12px] leading-none tracking-[0.04em] text-body">
+            <p className="font-meta text-[12px] leading-none tracking-[0.04em] text-body uppercase">
               {post.category.title}
             </p>
             <div className="flex flex-col gap-3">

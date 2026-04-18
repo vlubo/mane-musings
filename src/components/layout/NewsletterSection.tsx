@@ -2,7 +2,7 @@
 
 export function NewsletterSection() {
   return (
-    <section className="bg-sage-light border-b border-ink flex flex-col items-center gap-6 px-8 py-12 md:px-0 md:py-20">
+    <section className="bg-sage-light border-t border-b border-ink flex flex-col items-center gap-6 px-8 py-12 md:px-0 md:py-20">
       <div className="flex flex-col items-center gap-6 w-full max-w-[472px]">
         <div className="flex flex-col items-center gap-6 text-center">
           <h2 className="text-[24px] font-medium leading-[135%] text-body">

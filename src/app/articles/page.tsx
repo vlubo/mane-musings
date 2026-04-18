@@ -17,7 +17,7 @@ export default async function ArticlesPage() {
     <>
       <section className="border-b border-ink flex flex-col justify-end min-h-[311px] md:h-[320px] px-8 pb-12 md:px-16 md:pb-16 gap-[10px]">
         <h1 className="text-[24px] md:text-[32px] font-normal leading-none text-ink">Articles</h1>
-        <p className="text-[16px] leading-[135%] text-body max-w-[600px]">
+        <p className="text-[16px] leading-[135%] text-body">
           A growing library of notes on curl care, product experiments and the little things that made my routine quieter.
         </p>
       </section>
