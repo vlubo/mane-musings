@@ -23,9 +23,14 @@ describe('ArticleCard', () => {
     expect(screen.getByText('Moisture')).toBeInTheDocument()
   })
 
-  it('renders the read time', () => {
+  it('renders the excerpt', () => {
     render(<ArticleCard post={mockPost} />)
-    expect(screen.getByText('5 min read')).toBeInTheDocument()
+    expect(screen.getByText('A guide to deep conditioning.')).toBeInTheDocument()
+  })
+
+  it('renders a Read more label', () => {
+    render(<ArticleCard post={mockPost} />)
+    expect(screen.getByText(/read more/i)).toBeInTheDocument()
   })
 
   it('links to /articles/[slug]', () => {

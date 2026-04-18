@@ -1,14 +1,22 @@
-import { Bebas_Neue, Archivo } from 'next/font/google'
+import { Inter, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 
-export const bebasNeue = Bebas_Neue({
-  weight: '400',
+export const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-display-var',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
   display: 'swap',
 })
 
-export const archivo = Archivo({
+export const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
-  variable: '--font-body-var',
+  weight: ['400', '500', '600'],
+  variable: '--font-ibm-plex-sans',
+  display: 'swap',
+})
+
+export const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-ibm-plex-mono',
   display: 'swap',
 })

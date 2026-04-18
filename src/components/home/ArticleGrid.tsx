@@ -1,41 +1,37 @@
+import Link from 'next/link'
 import { ArticleCard } from '@/components/shared/ArticleCard'
 import type { PostCard } from '@/lib/types'
 
 interface Props {
   posts: PostCard[]
+  showMoreLink?: boolean
 }
 
-function chunk<T>(arr: T[], sizes: number[]): T[][] {
-  if (!sizes.length) return []
-  const result: T[][] = []
-  let i = 0
-  let sizeIndex = 0
-  while (i < arr.length) {
-    const size = sizes[sizeIndex % sizes.length]
-    result.push(arr.slice(i, i + size))
-    i += size
-    sizeIndex++
-  }
-  return result
-}
-
-export function ArticleGrid({ posts }: Props) {
-  const rows = chunk(posts, [3, 2])
+export function ArticleGrid({ posts, showMoreLink = false }: Props) {
+  const fillers3 = posts.length % 3 === 0 ? 0 : 3 - (posts.length % 3)
+  const fillers2 = posts.length % 2 === 0 ? 0 : 1
 
   return (
     <div>
-      {rows.map((row, rowIndex) => (
-        <div
-          key={rowIndex}
-          className={`grid gap-px bg-sage border-t border-sage grid-cols-1 sm:grid-cols-2 ${
-            row.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'
-          }`}
+      <div className="grid gap-px bg-ink grid-cols-1 sm:grid-cols-2 md:grid-cols-3 border-b border-ink">
+        {posts.map((post) => (
+          <ArticleCard key={post._id} post={post} />
+        ))}
+        {Array.from({ length: fillers2 }).map((_, i) => (
+          <div key={`filler2-${i}`} className="bg-canvas hidden sm:block md:hidden" />
+        ))}
+        {Array.from({ length: fillers3 }).map((_, i) => (
+          <div key={`filler3-${i}`} className="bg-canvas hidden md:block" />
+        ))}
+      </div>
+      {showMoreLink && (
+        <Link
+          href="/articles"
+          className="flex items-center justify-center w-full h-[65px] text-[14px] tracking-[0.04em] text-body hover:bg-sage-light transition-colors"
         >
-          {row.map((post) => (
-            <ArticleCard key={post._id} post={post} />
-          ))}
-        </div>
-      ))}
+          More articles →
+        </Link>
+      )}
     </div>
   )
 }

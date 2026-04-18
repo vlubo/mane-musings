@@ -35,18 +35,16 @@ export default async function TopicPage({ params }: Props) {
 
   return (
     <>
-      <div className="border-b border-sage">
-        <div className="px-8 py-12 md:px-12 md:py-14">
-          <h1 className="font-display text-[20px] text-ink md:text-[32px]">
-            {category.title}
-          </h1>
-          {category.description && (
-            <p className="font-body text-[14px] text-gray mt-3 max-w-lg leading-[135%] md:text-[16px]">
-              {category.description}
-            </p>
-          )}
-        </div>
-      </div>
+      <section className="border-b border-ink flex flex-col justify-end min-h-[311px] md:h-[320px] px-8 pb-12 md:px-16 md:pb-16 gap-[10px]">
+        <h1 className="text-[24px] md:text-[32px] font-normal leading-none text-ink">
+          {category.title}
+        </h1>
+        {category.description && (
+          <p className="text-[16px] leading-[135%] text-body max-w-[600px]">
+            {category.description}
+          </p>
+        )}
+      </section>
       <TopicsStrip categories={categories} activeSlug={slug} />
       <ArticleGrid posts={posts} />
     </>

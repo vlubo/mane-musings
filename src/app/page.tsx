@@ -10,7 +10,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroStatement />
-      <ArticleGrid posts={posts} />
+      <ArticleGrid posts={posts} showMoreLink />
     </>
   )
 }

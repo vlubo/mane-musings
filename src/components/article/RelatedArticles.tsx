@@ -9,13 +9,13 @@ export function RelatedArticles({ posts }: Props) {
   if (posts.length === 0) return null
 
   return (
-    <section className="border-t border-sage" aria-label="Related articles">
+    <section className="border-t border-ink" aria-label="Related articles">
       <div className="px-8 pt-10 pb-6 md:px-12 md:pt-12 md:pb-7">
         <p className="text-[11px] tracking-[0.25em] uppercase text-gray font-semibold">More to Read</p>
       </div>
-      <div className="grid grid-cols-1 gap-px bg-sage border-t border-sage sm:grid-cols-2 md:grid-cols-3">
-        {posts.slice(0, 3).map((post) => (
-          <ArticleCard key={post._id} post={post} />
+      <div className="grid grid-cols-1 gap-px bg-ink sm:grid-cols-2 md:grid-cols-3">
+        {posts.slice(0, 3).map((post, i) => (
+          <ArticleCard key={post._id} post={post} colIndex={(i % 3) as 0 | 1 | 2} />
         ))}
       </div>
     </section>

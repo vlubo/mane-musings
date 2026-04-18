@@ -8,7 +8,7 @@ interface Props {
 
 export function SplitSection({ heading, content }: Props) {
   return (
-    <div className="grid grid-cols-1 gap-6 my-10 border-t border-sage pt-8 md:grid-cols-2 md:gap-12">
+    <div className="grid grid-cols-1 gap-6 my-10 border-t border-ink pt-8 md:grid-cols-2 md:gap-12">
       <div>
         <h3 className="font-display text-[20px] leading-[135%] text-ink">{heading}</h3>
       </div>

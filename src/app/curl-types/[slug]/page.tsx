@@ -31,7 +31,7 @@ export default async function HairTypePage({ params }: Props) {
 
   return (
     <>
-      <div className="border-b border-sage">
+      <div className="border-b border-ink">
         <div className="px-8 py-12 md:px-12 md:py-14">
           <p className="text-[11px] tracking-[0.25em] uppercase text-gray font-semibold mb-3">Curl Type</p>
           <h1 className="font-display text-[20px] text-ink md:text-[32px]">

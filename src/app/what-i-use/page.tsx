@@ -14,15 +14,13 @@ export default async function WhatIUsePage() {
 
   return (
     <>
-      <div className="border-b border-sage">
-        <div className="px-8 py-12 md:px-12 md:py-14">
-          <h1 className="font-display text-[20px] text-ink md:text-[32px]">What I Use</h1>
-          <p className="font-body text-[14px] text-gray mt-3 max-w-lg leading-[135%] md:text-[16px]">
-            My current routine — the exact products and methods I use. Updated whenever my routine changes.
-          </p>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 gap-px bg-sage border-t border-sage sm:grid-cols-2 md:grid-cols-3">
+      <section className="flex flex-col justify-end min-h-[311px] md:h-[320px] px-8 pb-12 md:px-16 md:pb-16 gap-[10px] border-b border-ink">
+        <h1 className="text-[24px] md:text-[32px] font-normal leading-none text-ink">What I Use</h1>
+        <p className="text-[16px] leading-[135%] text-body max-w-[600px]">
+          My current routine — the exact products and methods I use. Updated whenever my routine changes.
+        </p>
+      </section>
+      <div className="grid gap-px bg-ink grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {posts.map((post) => (
           <ArticleCard key={post._id} post={post} />
         ))}

@@ -15,14 +15,12 @@ export default async function ArticlesPage() {
 
   return (
     <>
-      <div className="border-b border-sage">
-        <div className="px-8 py-12 md:px-12 md:py-14">
-          <h1 className="font-display text-[20px] text-ink md:text-[32px]">Articles</h1>
-          <p className="font-body text-[14px] text-gray mt-3 max-w-lg leading-[135%] md:text-[16px]">
-            Guides, routines, and honest product reviews for every curl type.
-          </p>
-        </div>
-      </div>
+      <section className="border-b border-ink flex flex-col justify-end min-h-[311px] md:h-[320px] px-8 pb-12 md:px-16 md:pb-16 gap-[10px]">
+        <h1 className="text-[24px] md:text-[32px] font-normal leading-none text-ink">Articles</h1>
+        <p className="text-[16px] leading-[135%] text-body max-w-[600px]">
+          A growing library of notes on curl care, product experiments and the little things that made my routine quieter.
+        </p>
+      </section>
       <TopicsStrip categories={categories} />
       <ArticleGrid posts={posts} />
     </>

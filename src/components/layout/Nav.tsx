@@ -1,40 +1,83 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import { NavLinks } from './NavLinks'
+
+function InstagramIcon() {
+  return (
+    <svg width={20} height={20} viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path
+        d="M6.667 2.5h6.666a4.167 4.167 0 0 1 4.167 4.167v6.666a4.167 4.167 0 0 1-4.167 4.167H6.667A4.167 4.167 0 0 1 2.5 13.333V6.667A4.167 4.167 0 0 1 6.667 2.5Z"
+        stroke="currentColor" strokeWidth="1.25"
+      />
+      <circle cx="10" cy="10" r="3.333" stroke="currentColor" strokeWidth="1.25" />
+      <circle cx="14.583" cy="5.417" r="0.833" fill="currentColor" />
+    </svg>
+  )
+}
+
+function YouTubeIcon() {
+  return (
+    <svg width={20} height={14} viewBox="0 0 20 14" fill="none" aria-hidden="true">
+      <path
+        d="M18.5 2.1A2.17 2.17 0 0 0 17 .58C15.67.2 10 .2 10 .2s-5.67 0-7 .38A2.17 2.17 0 0 0 1.5 2.1 22.5 22.5 0 0 0 1.12 7a22.5 22.5 0 0 0 .38 4.9A2.17 2.17 0 0 0 3 13.42c1.33.38 7 .38 7 .38s5.67 0 7-.38a2.17 2.17 0 0 0 1.5-1.52A22.5 22.5 0 0 0 18.88 7a22.5 22.5 0 0 0-.38-4.9Z"
+        stroke="currentColor" strokeWidth="1.1"
+      />
+      <path d="M8.2 9.8 12.9 7 8.2 4.2v5.6Z" fill="currentColor" />
+    </svg>
+  )
+}
+
+function MenuIcon() {
+  return (
+    <svg width={20} height={20} viewBox="0 0 20 20" aria-hidden="true">
+      <line x1="3" y1="8" x2="17" y2="8" stroke="currentColor" strokeWidth="1.25" />
+      <line x1="3" y1="12" x2="17" y2="12" stroke="currentColor" strokeWidth="1.25" />
+    </svg>
+  )
+}
 
 export function Nav() {
-  const navLinkClass = "text-[11px] tracking-[0.2em] uppercase text-ink font-semibold hover:text-gray transition-colors"
-
   return (
-    <nav className="sticky top-0 z-10 flex items-center justify-between px-8 py-4 border-b border-sage bg-canvas md:px-12 md:py-5">
-      {/* Left links — hidden on mobile */}
-      <div className="hidden md:flex gap-7">
-        <Link href="/articles" className={navLinkClass}>
-          Articles
+    <nav className="sticky top-0 z-10 flex items-center justify-between px-8 md:px-12 border-b border-ink bg-canvas h-[80px] md:h-[95px]">
+      {/* Left: logo + nav links */}
+      <div className="flex items-center gap-12">
+        <Link href="/" aria-label="Mane Musings — home">
+          <Image
+            src="/logo-lg.svg"
+            alt="Mane Musings"
+            width={161}
+            height={15}
+            priority
+            className="hidden md:block"
+          />
+          <Image
+            src="/logo-sm.svg"
+            alt="Mane Musings"
+            width={129}
+            height={12}
+            priority
+            className="md:hidden"
+          />
         </Link>
-        <Link href="/what-i-use" className={navLinkClass}>
-          What I Use
-        </Link>
-        <Link href="/about" className={navLinkClass}>
-          About
-        </Link>
+        <NavLinks />
       </div>
 
-      {/* Wordmark — centered on desktop, left-aligned on mobile */}
-      <Link href="/" className="md:absolute md:left-1/2 md:-translate-x-1/2 font-display text-[20px] text-ink tracking-wide">
-        Mane Musings
-      </Link>
-
-      {/* Right side */}
-      <div className="flex items-center gap-4">
-        <button type="button" aria-label="Search" className="hidden md:block text-[11px] tracking-[0.2em] uppercase text-gray font-semibold cursor-pointer">
-          Search
-        </button>
-        {/* Mobile hamburger — visual only */}
-        <button className="md:hidden flex flex-col gap-1.5 p-1" aria-label="Open menu">
-          <span className="block w-5 h-px bg-ink" />
-          <span className="block w-5 h-px bg-ink" />
-          <span className="block w-5 h-px bg-ink" />
-        </button>
+      {/* Right: vertical divider + social icons (desktop) | hamburger (mobile) */}
+      <div className="hidden md:flex self-stretch items-stretch">
+        <div className="w-px bg-ink opacity-50" />
+        <div className="flex items-center gap-4 pl-8 text-gray">
+          <a href="#" aria-label="Instagram" className="hover:text-ink transition-colors">
+            <InstagramIcon />
+          </a>
+          <a href="#" aria-label="YouTube" className="hover:text-ink transition-colors">
+            <YouTubeIcon />
+          </a>
+        </div>
       </div>
+
+      <button className="md:hidden text-ink" aria-label="Open menu">
+        <MenuIcon />
+      </button>
     </nav>
   )
 }

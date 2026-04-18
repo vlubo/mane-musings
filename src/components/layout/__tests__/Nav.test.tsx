@@ -1,5 +1,10 @@
 import { render, screen } from '@testing-library/react'
+import { vi } from 'vitest'
 import { Nav } from '../Nav'
+
+vi.mock('next/navigation', () => ({
+  usePathname: () => '/',
+}))
 
 describe('Nav', () => {
   it('renders the wordmark as a link to /', () => {
