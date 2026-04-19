@@ -4,7 +4,6 @@ import { TopicsStrip } from '@/components/home/TopicsStrip'
 import { ArticleGrid } from '@/components/home/ArticleGrid'
 import type { Metadata } from 'next'
 
-export const revalidate = 60
 
 interface Props {
   params: Promise<{ slug: string }>

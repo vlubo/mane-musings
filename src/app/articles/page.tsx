@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   description: 'All articles — guides, routines, and product reviews for every curl type.',
 }
 
-export const revalidate = 60
 
 export default async function ArticlesPage() {
   const [posts, categories] = await Promise.all([getAllPosts(), getAllCategories()])

@@ -5,7 +5,6 @@ import { ArticleBody } from '@/components/article/ArticleBody'
 import { RelatedArticles } from '@/components/article/RelatedArticles'
 import type { Metadata } from 'next'
 
-export const revalidate = 60
 
 interface Props {
   params: Promise<{ slug: string }>

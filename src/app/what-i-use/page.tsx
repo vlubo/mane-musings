@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   description: "The creator's current go-to curl routine — products and methods she actually uses.",
 }
 
-export const revalidate = 60
 
 export default async function WhatIUsePage() {
   const posts = await getPinnedWhatIUsePosts()
