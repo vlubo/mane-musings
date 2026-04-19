@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(gunzip -c \"C:/Users/Jason/.claude/projects/c--Users-Jason-Desktop-GitHub-mane-musings/3e1b4f4e-09ef-4e6f-bf50-7e9eedb5f331/tool-results/webfetch-1776507921576-yq5id0.bin\")",
+      "mcp__Sanity__query_documents",
+      "mcp__Sanity__create_documents_from_json",
+      "mcp__Sanity__publish_documents",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
+    ]
+  }
+}
