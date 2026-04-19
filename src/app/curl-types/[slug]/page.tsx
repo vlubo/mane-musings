@@ -4,6 +4,8 @@ import { ArticleGrid } from '@/components/home/ArticleGrid'
 import type { Metadata } from 'next'
 
 
+export const dynamicParams = false
+
 interface Props {
   params: Promise<{ slug: string }>
 }
