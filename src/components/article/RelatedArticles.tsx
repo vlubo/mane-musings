@@ -9,7 +9,6 @@ export function RelatedArticles({ posts }: Props) {
   if (posts.length === 0) return null
 
   const visible = posts.slice(0, 3)
-  const placeholders = Array.from({ length: 3 - visible.length })
 
   return (
     <section className="border-t border-ink" aria-label="Related articles">
@@ -20,9 +19,6 @@ export function RelatedArticles({ posts }: Props) {
       <div className="grid grid-cols-1 gap-px bg-ink sm:grid-cols-2 md:grid-cols-3">
         {visible.map((post, i) => (
           <ArticleCard key={post._id} post={post} colIndex={(i % 3) as 0 | 1 | 2} />
-        ))}
-        {placeholders.map((_, i) => (
-          <div key={`placeholder-${i}`} className="bg-canvas" />
         ))}
       </div>
     </section>
