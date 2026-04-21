@@ -8,7 +8,9 @@
       "mcp__Sanity__publish_documents",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(npm install *)",
+      "Read(//c/Users/Jason/**)"
     ]
   }
 }
