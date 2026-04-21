@@ -10,7 +10,11 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(npm install *)",
-      "Read(//c/Users/Jason/**)"
+      "Read(//c/Users/Jason/**)",
+      "Bash(cp \"c:/Users/Jason/Desktop/GitHub/mane-musings/src/sanity/schemaTypes/post.ts\" \"c:/Users/Jason/studio-mane-musings/schemaTypes/post.ts\")",
+      "Bash(cp \"c:/Users/Jason/Desktop/GitHub/mane-musings/src/sanity/schemaTypes/category.ts\" \"c:/Users/Jason/studio-mane-musings/schemaTypes/category.ts\")",
+      "Bash(cp \"c:/Users/Jason/Desktop/GitHub/mane-musings/src/sanity/schemaTypes/hairType.ts\" \"c:/Users/Jason/studio-mane-musings/schemaTypes/hairType.ts\")",
+      "Bash(cp \"c:/Users/Jason/Desktop/GitHub/mane-musings/src/sanity/schemaTypes/affiliateLink.ts\" \"c:/Users/Jason/studio-mane-musings/schemaTypes/affiliateLink.ts\")"
     ]
   }
 }
