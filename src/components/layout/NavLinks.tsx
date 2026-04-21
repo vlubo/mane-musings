@@ -20,7 +20,7 @@ export function NavLinks() {
           <Link
             key={href}
             href={href}
-            className={`text-[14px] tracking-[0.02em] transition-colors ${
+            className={`text-[14px] tracking-[0.08em] uppercase transition-colors ${
               isActive
                 ? 'text-ink underline underline-offset-4 decoration-[1px]'
                 : 'text-body hover:text-ink'
