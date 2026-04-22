@@ -1,6 +1,6 @@
 # Mane Musings
 
-A curly hair blog built with Next.js (App Router), Sanity, Tailwind CSS v4, deployed on Vercel.
+A curly hair blog built with Next.js (App Router), Sanity, Tailwind CSS v4, deployed on Cloudflare Pages.
 Primary monetization: affiliate links embedded in articles as inline product cards.
 
 ## Stack
@@ -9,7 +9,7 @@ Primary monetization: affiliate links embedded in articles as inline product car
 - **Styling:** Tailwind CSS v4 — design tokens in `src/app/globals.css` inside `@theme {}`. No `tailwind.config.ts`.
 - **Fonts:** Bebas Neue (display/headlines), Archivo (body/UI) — configured in `src/lib/fonts.ts`
 - **Testing:** Vitest + React Testing Library (`npm run test`)
-- **Hosting:** Vercel — push to main to deploy
+- **Hosting:** Cloudflare Pages — push to main to deploy
 
 ## Design Tokens
 | Token | Hex | Usage |
